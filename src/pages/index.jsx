@@ -12,7 +12,7 @@ export default function Index() {
         <div>
             <HeroSection/>
             <Destination/>
-             <Expereince/>
+            <Expereince/>
             <Gallery/>
             <Testimonials/>
             <Footer/> 

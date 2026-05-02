@@ -39,9 +39,9 @@ const OpeningContent = ({pushX}) =>{
     return(
         <motion.div 
         style={{x: pushX}}
-        className='h-screen w-full flex flex-col lg:flex-row items-center justify-center padding_inline py-32 lg:py-0
-        lg:justify-between shrink-0 sticky right-0 bg-(--black)'>
-            <div className='w-full lg:w-[311px] lg:h-140 flex flex-col justify-between relative z-10'>
+        className='min-h-screen w-full flex flex-col lg:flex-row items-center justify-center padding_inline py-20 lg:py-0
+        lg:justify-between shrink-0 sticky right-0 bg-(--black) gap-12 lg:gap-0'>
+            <div className='w-full lg:w-[311px] h-fit lg:h-140 flex flex-col justify-between relative z-10 gap-6 lg:gap-0'>
                 <p className='text-left text-(--white)'>
                     <span className='text-(--green) font-bold'>Beyond </span> 
                     the iconic peaks lies a country rich in rhythm, 
@@ -51,18 +51,18 @@ const OpeningContent = ({pushX}) =>{
                     waiting to be explored.
                 </p>
 
-                <div className='mt-4 items-center gap-1 text-(--white) hidden lg:flex'>
+                <div className='mt-4 items-center gap-1 text-(--white) hidden md:flex'>
                     <span className='tracking-wider'>Explore More</span> <MoveRight className='size-4'/>
                 </div>
             </div>
 
             {/*image*/}
-            <div className='h-100 lg:h-140 2xl:180 w-100 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2'>
+            <div className='h-60 md:h-100 lg:h-140 2xl:180 w-60 md:w-100 lg:w-140 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2 opacity-50 lg:opacity-100'>
                 <img src="/swyambhu.jpg" alt="swyambhu image" className='h-full w-full object-cover
                 filter grayscale-100'/>
             </div>
 
-            <div className='relative z-10 h-140 flex items-end -bottom-7'>
+            <div className='relative z-10 h-fit lg:h-140 flex items-end lg:-bottom-7'>
                 <Heading text1='More' text2='Than' text3='Mountains' className='text-right text-(--white)'/>
             </div>
         </motion.div>
@@ -72,7 +72,7 @@ const OpeningContent = ({pushX}) =>{
 const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt, index, x})=>{
     return(
         <div className={`bg-green-950 text-(--white) h-screen w-[130vw] shrink-0 
-        flex flex-col lg:flex-row items-center justify-center gap-16
+        flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16
         ${index > 0 ? 'pl-8 lg:pl-32' : ''}`}>
             <div className='w-full lg:w-2/6 padding_inline space-y-4'>
                 <Tag tag={tag}/>
@@ -83,7 +83,7 @@ const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt
             </div>
             <div className='lg:w-4/6 w-full'>
                 <motion.img
-                src={image} alt={image_alt} className='h-80 lg:h-screen w-full object-cover object-center'/>
+                src={image} alt={image_alt} className='h-64 md:h-80 lg:h-screen w-full object-cover object-center'/>
             </div>
         </div>
     )

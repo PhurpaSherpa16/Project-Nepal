@@ -9,7 +9,7 @@ export default function Expereince() {
   return (
     <div className='bg-(--white) relative z-10'>
 
-        <motion.div className='relative overflow-hidden'>
+        <motion.div className='relative overflow-y-hidden'>
             {/* content 1 */}
             <Content
             tag='01/05'
@@ -134,9 +134,9 @@ export const Content =({className, paragraph,
 
     return(
         <motion.div ref={mainDivRef}
-        className={`h-screen w-full bg-(--white) flex flex-col items-center justify-center lg:flex-row gap-10 padding_inline_block ${className}`}>
-            <div className={`w-full lg:w-4/6 grid place-items-center relative lg:${image_1}`}>
-                <div className='w-full h-100 lg:h-150 lg:w-120 2xl:h-200 2xl:w-175 overflow-hidden'>
+        className={`h-screen w-screen bg-(--white) flex gap-10 padding_inline_block ${className}`}>
+            <div className={`w-full lg:w-4/6 grid place-items-center relative ${image_1}`}>
+                <div className='w-full h-150 lg:w-120 2xl:h-200 2xl:w-175 overflow-hidden'>
                     <motion.img src={image1} alt="image 1"
                     style={{y: imageFly1, scale: imageFlyScale1}}
                     className='h-full w-full object-cover object-center relative'/>
@@ -158,7 +158,7 @@ export const Content =({className, paragraph,
 
             </div>
 
-            <div className='w-full lg:w-3/6 h-full flex flex-col gap-4 justify-end'>
+            <div className='lg:w-3/6 h-full flex flex-col gap-4 justify-end'>
                 <div className={`flex ${justify_align}`}>
                     <p className={`w-sm text-(--black) ${text_align}`}>
                     {paragraph}

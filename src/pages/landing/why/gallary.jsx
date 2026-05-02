@@ -122,9 +122,13 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
                     <motion.img 
                         style={{
                             scale: imageFlyScale,
+                            top: top,
+                            left: left,
+                            translateX: '-65%',
+                            translateY: '-50%'
                         }}
                     src={image1} alt={alt1} 
-                    className={`h-full w-full object-cover ${image1_position}`}/>
+                    className={`h-full w-full object-cover absolute ${image1_position}`}/>
                 </motion.div>
                 <motion.div
                 style={{y:textFly1}}>
