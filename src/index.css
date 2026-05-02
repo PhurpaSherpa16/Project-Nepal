@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --green : #2C7E53;
+    --white : #F5F5F2;
+    --black : #010101;
+}
+
+@font-face {
+  font-family: 'qaveria';
+  src: url('/qaveria.ttf') format('truetype');
+}
+
+
+@layer utilities{
+  button{
+    @apply
+    cursor-pointer
+    disabled:cursor-not-allowed
+  }
+
+  h1{
+    @apply
+    text-xl md:text-2xl lg:text-4xl font-bold tracking-wide
+  }
+
+  p{
+    @apply
+    text-black/60
+  }
+
+}
+
+@layer components{
+    .padding{
+        @apply
+        p-4
+        lg:pt-12 pb-2 lg:px-16
+
+    }
+    .padding_inline{
+        @apply
+        px-4
+        lg:px-16
+    }
+
+    .padding_inline_block{
+      @apply
+      p-4
+      lg:px-16 lg:py-8
+    }
+}
