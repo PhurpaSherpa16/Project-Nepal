@@ -76,7 +76,7 @@ npm run build
 
 ## Link to Website
 
-- https://visinepal.netlify.app/
+- https://project-nepal.netlify.app/
 
 ---
 Crafted to inspire exploration. 🏔️
