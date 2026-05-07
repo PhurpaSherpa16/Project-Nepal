@@ -5,7 +5,8 @@ import { motion, scale } from 'motion/react'
 
 export default function ButtonCTA() {
   return (
-    <motion.button
+    <motion.a
+    href="#diversity"
     whileHover={{scale: 1.05}}
     whileTap={{scale:0.95}}
     className='group relative px-2 pl-6 py-1.5 
@@ -23,6 +24,6 @@ export default function ButtonCTA() {
             <ArrowRight className='relative z-20 text-(--white) size-5 -rotate-45
             group-hover:rotate-0 transition-transform duration-300'/>
         </div>
-    </motion.button>
+    </motion.a>
   )
 }

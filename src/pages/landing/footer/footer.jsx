@@ -121,7 +121,7 @@ const FooterContent = ({ footerData }) => {
                 text-(--green) uppercase text-center tracking-[.15em]
                 font-black'>
           {hero.split('').map((letter, index) => (
-            <HeroFooter key={index} letter={letter} delay={index * 0.02} className={letter === ' ' ? 'w-4' : ''}/>
+            <HeroFooter key={index} letter={letter} delay={index * 0.02} className={letter === ' ' ? 'w-4' : ''} />
           ))}
         </motion.h1>
       </div>

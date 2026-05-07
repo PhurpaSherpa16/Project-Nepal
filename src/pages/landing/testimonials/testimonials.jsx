@@ -36,7 +36,7 @@ export default function Testimonials() {
                 </div>
             </div>
         </div>
-        <div className='bg-(--black) min-h-screen lg:min-h-[320vh] pb-20 lg:pb-70 overflow-hidden'>
+        <div id='testimonials' className='bg-(--black) min-h-screen lg:min-h-[320vh] pb-20 lg:pb-70 overflow-hidden'>
             {reviews.map((review, index) => (
                 <Reviews key={index} review={review} index={index}/>
             ))}

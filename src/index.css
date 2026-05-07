@@ -58,3 +58,41 @@
       lg:px-16 lg:py-8
     }
 }
+/* Burger Menu Styles */
+.burger {
+  width: 100%;
+  position: relative;
+  height: 2px;
+}
+
+.burger::after,
+.burger::before {
+  content: "";
+  width: 60%;
+  height: 2px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  left: 20%;
+  transition: transform 0.3s ease, top 0.3s ease;
+  background-color: var(--white);
+}
+
+.burger::after {
+  top: -5px;
+}
+
+.burger::before {
+  top: 5px;
+}
+
+.burger_active::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.burger_active::before {
+  transform: rotate(-45deg);
+  top: 0;
+}

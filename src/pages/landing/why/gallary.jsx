@@ -28,7 +28,7 @@ export default function Gallery() {
     const {current} = useBreakPoints()
 
   return (
-    <div ref={mainDivRef} id='gallery' className='relative h-[500vh] md:h-[400vh] lg:h-[680vh] w-full bg-(--black)'> 
+    <div ref={mainDivRef} className='relative h-[500vh] md:h-[400vh] lg:h-[680vh] w-full bg-(--black)'> 
         <div className={`h-screen w-full flex items-center justify-center shrink-0 sticky top-0`}>
             <motion.h1 className='text-(--white) text-center text-[46px] md:text-[142px] lg:text-[132px]'
             style={{fontFamily:'qaveria', scale, opacity}}>
@@ -64,7 +64,7 @@ export default function Gallery() {
             </div>
 
             {current != 'sm' ? <div className='h-[80vh] -top-100'/> : <div className='h-[20vh] mt-40'/>}
-            <div className='-space-y-16'>
+            <div id='gallery' className='-space-y-16'>
                 <ImageGallery 
                     image1="/gallery3.jpg" image2="/gallery4.jpg" 
                     alt1="pokhara" alt2="pokhara" 

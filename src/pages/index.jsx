@@ -9,7 +9,7 @@ import Gallery from "./landing/why/gallary";
 export default function Index() {
 
     return (
-        <div>
+        <>
             <HeroSection/>
             <Destination/>
 
@@ -18,6 +18,6 @@ export default function Index() {
             <Testimonials/>
             
             <Footer/> 
-        </div>
+        </>
     )
 }
