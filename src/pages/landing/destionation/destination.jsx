@@ -24,7 +24,7 @@ export default function Destination() {
     const scrollVelocity = useVelocity(verticalScroll)
 
   return (
-    <div ref={verticalRef} id='diversity' className='h-[1000vh] bg-(--black) relative'>
+    <div ref={verticalRef} id='destinations' className='h-[1000vh] bg-(--black) relative'>
         <div className='sticky top-0 min-h-screen w-full flex items-center overflow-x-hidden'>
             <Transition title1={'More'} title2={'Than'} title3={'Destinations'} hightlight='title3' className={'fixed inset-0'} />
             <OpeningContent pushX={pushX}/>

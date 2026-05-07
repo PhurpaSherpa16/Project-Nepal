@@ -5,7 +5,7 @@ import AnimatedCurv from './animated_curv'
 
 const menuList = [
     { title: "Home", link: "#hero" },
-    { title: "Destinations", link: "#destination" },
+    { title: "Destinations", link: "#destinations" },
     { title: "Experience", link: "#experience" },
     { title: "Gallery", link: "#gallery" },
     { title: "Testimonials", link: "#testimonials" },
