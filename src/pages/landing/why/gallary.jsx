@@ -90,6 +90,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
     image2_position='object-center', image1_position='object-center'})=>{
     const imageDivRef = useRef(null)
     const imageRef = useRef(null)
+
     const {handleMouseEnter, left, top} = useMouseHover({ref:imageRef})
     
     const {scrollYProgress} = useScroll({
@@ -146,7 +147,6 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
             <motion.div 
             ref={imageRef} 
             onMouseEnter={handleMouseEnter} 
-
             className='flex item-end justify-end'>
                 <div className='text-(--white) space-y-4'>
                     <motion.div 

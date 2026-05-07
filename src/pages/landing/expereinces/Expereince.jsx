@@ -12,7 +12,7 @@ export default function Expereince() {
   return (
     <div id='experience' className='bg-(--white) relative z-10'>
 
-        <motion.div className='relative overflow-y-hidden'>
+        <motion.div className='relative overflow-y-hidden space-y-20 py-20 md:py-0 md:space-y-0'>
             {/* content 1 */}
             <Content
             tag='01/05'
@@ -269,11 +269,11 @@ const SmallScreenContent = ({className, paragraph, text_align, justify_align,
     return(
         <>
             <motion.div ref={mainDivRef}
-        className={`h-screen w-screen bg-(--white) flex flex-col gap-10 padding_inline_block`}>
-            <div className={`w-full grid place-items-center relative`}>
-                <div className='w-full h-100 overflow-hidden'>
-                    <motion.img src={image1} alt="image 1"
-                    style={{y: imageFly1, scale: imageFlyScale1}}
+                className={`h-screen w-screen bg-(--white) flex flex-col gap-10 padding_inline_block`}>
+                <div className={`w-full grid place-items-center relative`}>
+                    <div className='w-full h-100 overflow-hidden'>
+                        <motion.img src={image1} alt="image 1"
+                        style={{y: imageFly1, scale: imageFlyScale1}}
                     className='h-full w-full object-cover object-center relative'/>
                 </div>
                 <motion.div className={`size-30 absolute border-3 border-(--white) right-4 top-0 overflow-hidden`}
@@ -290,7 +290,7 @@ const SmallScreenContent = ({className, paragraph, text_align, justify_align,
                     className={`h-full w-full object-cover object-center`}/>
                 </motion.div>
             </div>
-            <div className='lg:w-3/6 h-full flex flex-col gap-4 justify-end'>
+            <div className='h-full flex flex-col gap-4 justify-start'>
                 <div className={`flex ${justify_align}`}>
                     <p className={`w-sm text-(--black) ${text_align}`}>
                     {paragraph}
