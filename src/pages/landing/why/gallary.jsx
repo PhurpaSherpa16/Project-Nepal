@@ -3,6 +3,7 @@ import Transition from '../../../components/transition'
 import { Content } from '../expereinces/Expereince'
 import { useScroll, useSpring, useTransform, motion } from 'motion/react'
 import useMouseHover from '../../../hooks/useMouseHover'
+import { useBreakPoints } from '../../../hooks/breakpoint'
 
 export default function Gallery() {
     const mainDivRef = useRef(null)
@@ -21,19 +22,20 @@ export default function Gallery() {
         {stiffness: 100, damping: 30}
     )
 
+    const {current} = useBreakPoints()
 
   return (
-    <div ref={mainDivRef} className='relative h-[650vh] bg-(--black)'> 
+    <div ref={mainDivRef} id='gallery' className='relative h-[500vh] md:h-[400vh] lg:h-[680vh] w-full bg-(--black)'> 
         <div className={`h-screen w-full flex items-center justify-center shrink-0 sticky top-0`}>
-            <motion.h1 className='text-(--white) text-center text-[46px] lg:text-[132px]'
+            <motion.h1 className='text-(--white) text-center text-[46px] md:text-[142px] lg:text-[132px]'
             style={{fontFamily:'qaveria', scale, opacity}}>
-                <span className={`lg:block inline-block`}>Why </span> 
-                <span className={`lg:block inline-block text-(--green)`}>Nepal</span> 
-                <span className={`lg:block inline-block`}>is Different?</span>
+                <span className={`md:block inline-block`}>Why </span> 
+                <span className={`md:block inline-block text-(--green)`}>Nepal</span> 
+                <span className={`md:block inline-block`}>is Different?</span>
             </motion.h1>
         </div>
 
-        <div className='h-fit w-full absolute inset-0 z-20 overflow-scroll'>
+        <div className='h-fit w-screen absolute inset-0 z-20 overflow-hidden'>
             {/* content 5 */}
             <div className='h-screen w-full overflow-hidden'>
                 <Content 
@@ -41,6 +43,9 @@ export default function Gallery() {
                 title2='Warmth'
                 title3='Within'
                 tag='05/05'
+                image_1 = "left-30"
+                image_2 = {current === 'md' ? "-left-20" : "left-5"}
+                image_3 = {current === 'md' ? "-left-25" : "-left-25"}
                 image1="/exp5_pic1.png"
                 image2="/exp5_pic2.jpg"
                 image3="/exp5_pic3.jpg"
@@ -53,7 +58,8 @@ export default function Gallery() {
                 }/>
             </div>
 
-            <div className='h-[80vh] -top-100'/>
+            {current != 'sm' ? <div className='h-[80vh] -top-100'/> : <div className='h-[20vh] mt-40'/>}
+            <div className='-space-y-16'>
                 <ImageGallery 
                     image1="/gallery3.jpg" image2="/gallery4.jpg" 
                     alt1="pokhara" alt2="pokhara" 
@@ -74,6 +80,7 @@ export default function Gallery() {
                     alt1="pokhara" alt2="pokhara" 
                     heading1="Effortless Value" supporting1="Experiences that feel rich and meaningful—yet remain accessible, balanced, and rewarding."
                     heading2="Meaningful Travel" supporting2="More than a visit—moments that stay with you, feeling deep, personal, and lasting."/>
+                </div>
             </div>
     </div>
   )
@@ -110,7 +117,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
 
 
     return(
-        <div ref={imageDivRef} className='h-fit w-full object object-center-cover px-16'>
+        <div ref={imageDivRef} className='h-fit w-full object object-center-cover px-4 md:px-8 lg:px-16 flex flex-col gap-32'>
             <motion.div
             ref={imageRef} 
             onMouseEnter={handleMouseEnter}
@@ -118,7 +125,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
             space-y-4 relative w-fit'>
                 <motion.div
                 style={{y: imageFly1}}
-                className='h-140 w-100 2xl:h-170 2xl:w-130 overflow-hidden'>
+                className='h-80 lg:h-140 w-full lg:w-100 2xl:h-170 2xl:w-130 overflow-hidden'>
                     <motion.img 
                         style={{
                             scale: imageFlyScale,
@@ -133,7 +140,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
                 <motion.div
                 style={{y:textFly1}}>
                     <h1>{heading1}</h1>
-                    <p className='w-sm text-(--white)'>{supporting1}</p>
+                    <p className='w-full lg:w-sm text-(--white)'>{supporting1}</p>
                 </motion.div>
             </motion.div>
             <motion.div 
@@ -144,7 +151,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
                 <div className='text-(--white) space-y-4'>
                     <motion.div 
                     style={{y: imageFly1}}
-                    className='h-140 w-100 2xl:h-170 2xl:w-130 overflow-hidden'>
+                    className='h-80 lg:h-140 w-full lg:w-100 2xl:h-170 2xl:w-130 overflow-hidden'>
                         <motion.img 
                         style={{
                             scale: imageFlyScale
@@ -155,7 +162,7 @@ const ImageGallery = ({image1, image2, alt1, alt2, heading1, supporting1, headin
                         style={{y:textFly2}} 
                         className='flex flex-col items-end'>
                         <h1 className='text-right'>{heading2}</h1>
-                        <p className='w-sm text-right text-(--white)'>{supporting2}</p>
+                        <p className='w-full lg:w-sm text-right text-(--white)'>{supporting2}</p>
                     </motion.div>
                 </div>
             </motion.div>

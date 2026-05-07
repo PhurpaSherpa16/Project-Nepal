@@ -9,11 +9,11 @@ import { staggerVarients, footerVarients } from '../../../utils/motion'
 
 export default function Footer() {
   return (
-    <div className="h-[200vh] w-full relative">
-      <div className='h-screen bg-(--green) absolute inset-0 z-10'>
+    <div className="h-[250vh] lg:h-[200vh] w-screen relative">
+      <div className='absolute inset-0 z-20 h-fit'>
         <FAQ />
       </div>
-      <div className='h-screen bg-(--white) sticky top-0'>
+      <div className='min-h-screen w-full bg-(--white) sticky top-0 overflow-hidden'>
         <FooterContent footerData={footerData} />
       </div>
     </div>
@@ -28,21 +28,21 @@ const FooterContent = ({ footerData }) => {
       variants={staggerVarients}
       initial='hidden'
       whileInView='visible'
-      className='padding_inline_block space-y-8 h-full flex flex-col justify-between'>
+      className='padding_inline_block space-y-8 lg:space-y-16 h-full flex flex-col justify-between'>
       <motion.div
         className='flex justify-between items-end pt-32'>
         <motion.div variants={footerVarients} custom={{ direction: -1 }}>
           <Logo className='bg-(--green) w-fit p-2' secondTextColor='text-(--white)' iconColor='text-(--white)' />
         </motion.div>
-        <motion.h2 className='tracking-[.2em] uppercase text-xs flex items-center justify-center gap-2 cursor-pointer'
+        <motion.a href="#hero" className='tracking-[.2em] uppercase text-xs flex items-center justify-center gap-2 cursor-pointer'
           variants={footerVarients}>
           BACK TO TOP
           <MoveUp className='size-4' />
-        </motion.h2>
+        </motion.a>
       </motion.div>
-      <motion.div className='flex justify-between'>
+      <motion.div className='flex flex-col lg:flex-row justify-between space-y-8'>
         <motion.div className='space-y-4'>
-          <motion.p variants={footerVarients} custom={{ direction: -1 }} className='w-sm text-sm'>{supporting}</motion.p>
+          <motion.p variants={footerVarients} custom={{ direction: -1 }} className='w-full lg:w-sm text-sm '>{supporting}</motion.p>
           <motion.div className='flex gap-4'>
             {socials.map((social, index) => (
               <motion.div key={index} title={social.label}
@@ -56,7 +56,7 @@ const FooterContent = ({ footerData }) => {
             ))}
           </motion.div>
         </motion.div>
-        <div className='flex gap-16'>
+        <div className='flex justify-between lg:gap-16'>
           <div className='space-y-4'>
             <motion.div variants={footerVarients}>
               <span className='font-bold'>Quick Links</span>
@@ -66,7 +66,7 @@ const FooterContent = ({ footerData }) => {
                 quicklink.map((link, index) => (
                   <motion.div key={index} className='flex justify-between'
                     variants={footerVarients}>
-                    <Link to={link.link} className='text-base hover:text-(--green) transition-colors duration-300 hover:underline'>
+                    <Link to={link.link} className='text-base hover:text-(--green) transition-colors duration-300 cursor-pointer hover:underline'>
                       {link.label}
                     </Link>
                   </motion.div>
@@ -92,24 +92,24 @@ const FooterContent = ({ footerData }) => {
           </motion.div>
         </div>
       </motion.div>
-      <div className='border-t border-black/20 pt-8 2xl:pt-16'>
-        <div className='flex justify-between pt-4'>
+      <div className='border-t border-black/20 pt-4 lg:pt-16 flex flex-col-reverse lg:flex-col'>
+        <div className='flex flex-col lg:flex-row justify-between pt-4 gap-2'>
           <motion.p
             variants={footerVarients} custom={{ direction: -1 }}
-            className='w-full lg:w-1/2 text-sm'>{copy}</motion.p>
+            className='w-full text-center lg:text-left lg:w-1/2 text-sm'>{copy}</motion.p>
           <div className='flex flex-col justify-between gap-4'>
             <motion.p
               variants={footerVarients}
-              className='text-right flex items-center gap-2 text-sm'>{privacy}
+              className='text-center lg:text-right flex items-center gap-2 text-sm'>{privacy}
               <Link to="https://phurpasherpa-portfolio.netlify.app/" target='_blank'>
-                <Globe className='size-4 hover:text-(--black) transition-colors duration-300' />
+                <Globe className='size-4 hidden lg:block hover:text-(--black) transition-colors duration-300' />
               </Link>
             </motion.p>
           </div>
         </div>
         <motion.h1
-          className='text-[170px] 2xl:text-[200px] origin-top 
-                text-(--green) uppercase text-center tracking-[.15em] 
+          className='text-[50px] lg:text-[170px] 2xl:text-[240px] origin-top 
+                text-(--green) uppercase text-center tracking-[.15em]
                 font-black'>
           {hero.split('').map((letter, index) => (
             <HeroFooter key={index} letter={letter} delay={index * 0.02} />

@@ -95,12 +95,9 @@ export default function FAQ() {
   }
 
   return (
-    <div className='h-screen w-full'>
-        <div className='padding_inline_block flex  h-full w-full py-16'>
-            <div 
-            ref={containerRef}
-            className='min-h-screen flex flex-col justify-center w-2/3 relative'>
-
+    <div className='min-h-screen bg-(--green) '>
+        <div className='lg:px-16 lg:py-16 py-8 flex flex-col-reverse lg:flex-row  min-h-screen lg:h-screen w-full'>
+            <div ref={containerRef} className='h-fit lg:min-h-screen flex flex-col justify-center lg:w-2/3 w-full relative'>
                 {/* Sliding background cursor — bouncy rubbery spring */}
                 <motion.div 
                   animate={{
@@ -140,9 +137,9 @@ export default function FAQ() {
 
             </div>
 
-            <div className='h-full w-1/2 flex flex-col items-end justify-end gap-8 pb-8 2xl:pb-16'>
-                <Heading text1='Before' text2='You' text3='Go' className='text-(--white) text-right '/>
-                <p className='text-right w-sm text-(--white)'>
+            <div className='h-full lg:w-1/2 w-full flex flex-col items-center justify-center lg:items-end lg:justify-end gap-8 pb-8 2xl:pb-16'>
+                <Heading text1='Before' text2='You' text3='Go' className='text-(--white) text-center lg:text-right text-[46px] md:text-[132px]'/>
+                <p className='text-center lg:text-right w-sm text-(--white)'>
                     Everything you need to know before setting out—designed to 
                     make every journey feel Effortless, Informed, and Inspiring.
                 </p>

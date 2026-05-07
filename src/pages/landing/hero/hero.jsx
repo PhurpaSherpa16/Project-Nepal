@@ -7,7 +7,7 @@ import { staggerVarients, itemsVarients, scaleBackgroundVariant } from '../../..
 export default function HeroSection() {
 
     return (
-        <motion.div className='h-screen w-full relative z-10'
+        <motion.div id='hero' className='h-screen w-full relative z-10'
             variants={staggerVarients}
             initial='hidden'
             whileInView='visible'
@@ -32,15 +32,15 @@ export default function HeroSection() {
                 </header>
                 <div className='h-fit w-full'>
                     <div>
-                        <div className='lg:flex justify-between items-end'>
-                            <motion.h1 className='text-(--white) text-center lg:text-left text-[60px] lg:text-[132px] tracking-widest'
+                        <div className='md:flex justify-between items-end'>
+                            <motion.h1 className='text-(--white) text-center md:text-left text-[60px] md:text-[132px] tracking-widest'
                                 variants={itemsVarients}
                                 custom={{ direction: -1, distance: 100, transitionDelay: 1 }}
-                                style={{ fontFamily: 'qaveria' }}> <span className='lg:block inline-block'>
+                                style={{ fontFamily: 'qaveria' }}> <span className='md:block inline-block'>
                                     ABOVE</span> THE WORLD</motion.h1>
                             <div className='flex flex-col gap-8 pb-4'>
                                 <motion.p variants={itemsVarients} custom={{ distance: 100, transitionDelay: 1.2 }}
-                                    className='text-(--white) w-full lg:w-sm text-center lg:text-right'>
+                                    className='text-(--white) w-full md:w-sm text-center md:text-right'>
                                     <span style={{
                                         fontFamily: 'qaveria'
                                     }} className='text-(--green) text-[20px]'>Discover Nepal, </span> where vast mountain views

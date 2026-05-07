@@ -9,24 +9,24 @@ export default function Testimonials() {
   return (
     <div className='relative z-20'>
         <div className="bg-(--white) h-screen pb-16 2xl:pb-32">
-            <div className='padding_inline_block flex items-end min-h-full relative'>
-                <div className='text-center space-y-4 relative z-10 w-fit h-full flex justify-end flex-col'>
-                    <Heading text1='Stories' text2='That' text3='Says' className='text-(--black) text-left'/>
+            <div className='padding_inline_block flex flex-col gap-16 lg:flex-row items-center justify-center lg:justify-end lg:items-end min-h-full relative'>
+                <div className='text-center space-y-4 relative z-10 w-fit h-full flex justify-center lg:justify-end lg:items-end flex-col'>
+                    <Heading text1='Stories' text2='That' text3='Says' className='text-(--black) text-center lg:text-left text-[46px] md:text-[132px]'/>
                 </div>
-                <div className='w-full min-h-full relative flex flex-col gap-8 justify-end items-end'>
+                <div className='w-full min-h-full relative flex flex-col gap-8 justify-center items-center lg:justify-end lg:items-end'>
                     <div className='w-fit fit'>
-                        <div className='flex items-end flex-col justify-end h-full'>
-                            <h1 className='text-(--black) text-6xl'>
+                        <div className='flex justify-center lg:justify-end flex-col lg:items-end h-full'>
+                            <h1 className='text-(--black) text-3xl md:text-6xl text-center lg:text-right'>
                                 200K<span className='text-sm align-top'>+</span>
                             </h1>
                         </div>
 
-                        <div className='flex flex-col items-end justify-end h-full space-y-4'>
-                            <p className='text-right w-sm text-(--black)'>{content.paragraph}</p>
-                            <div className='flex items-end flex-col justify-end -space-x-2'>
-                                <div className='flex items-end -space-x-4'>
+                        <div className='flex flex-col justify-center lg:justify-end items-center lg:items-end h-full space-y-4'>
+                            <p className='text-center lg:text-right w-sm text-(--black)'>{content.paragraph}</p>
+                            <div className='flex lg:items-end items-center flex-col justify-end'>
+                                <div className='flex items-center lg:items-end -space-x-2  lg:-space-x-4'>
                                     {travelers.map((traveler, index) => (
-                                        <img key={index} src={traveler} alt="" className='size-12 rounded-full border border-(--white)'/>
+                                        <img key={index} src={traveler} alt="" className='size-8 md:size-12 rounded-full border border-(--white)'/>
                                     ))}
                                 </div>
                                 <p className='text-(--black) text-right'>WorldWide Stories</p>
@@ -36,7 +36,7 @@ export default function Testimonials() {
                 </div>
             </div>
         </div>
-        <div className='bg-(--black) min-h-[320vh] pb-70 overflow-hidden'>
+        <div className='bg-(--black) min-h-screen lg:min-h-[320vh] pb-20 lg:pb-70 overflow-hidden'>
             {reviews.map((review, index) => (
                 <Reviews key={index} review={review} index={index}/>
             ))}
@@ -69,7 +69,7 @@ const Reviews =({review, index})=>{
         {stiffness: 100, damping: 20}
     )
     const textFlyIn2 = useSpring(
-        useTransform(scrollYProgress, [0, 1], [160, -150]),
+        useTransform(scrollYProgress, [0, 1], [100, 0]),
         {stiffness: 100, damping: 20}
     )
 
@@ -78,8 +78,8 @@ const Reviews =({review, index})=>{
     return(
         <motion.div ref={mainDivRef} 
         onMouseMove={handleMouseEnter}
-        className='h-screen bg-(--black) flex flex-col items-center justify-center sticky'>
-            <motion.div className='w-120 h-160 relative' 
+        className='h-screen bg-(--black) flex lg:flex-col items-center justify-center sticky'>
+            <motion.div className='w-120 md:w-full h-160 md:h-full lg:h-160 lg:w-120 flex items-center justify-center relative' 
             style={{
                 y: ImageFlyIn,
                 scale:imageScale
@@ -88,17 +88,15 @@ const Reviews =({review, index})=>{
                 initial={{opacity:0}}
                 whileInView={{opacity:1}}
                 transition={{duration:0.3, delay:0.2, ease:"easeIn"}}
-                src={review.image} alt="pokhara" className='w-full h-full object-cover origin-top absolute' 
+                src={review.image} alt="pokhara" className='h-80 w-60 md:w-[40%] md:h-[40%] lg:w-full lg:h-full object-cover origin-top lg:absolute lg:-translate-x-[50%] lg:-translate-y-[50%]' 
                 style={{scale: imageScale, 
                     top: top,
                     left: left,
-                    translateX: '-50%',
-                    translateY: '-50%'
                 }}/>
             </motion.div>
             <motion.div 
             style={{y:textFlyIn1}}
-            className={`space-y-4 absolute top-30 2xl:top-50 ${index % 2 === 0 ? 'left-45 2xl:left-105' : 'right-45 2xl:right-105'}`}>
+            className={`space-y-4 absolute top-30 2xl:top-50 ${index % 2 === 0 ? 'left-4 md:left-20 lg:left-45 2xl:left-105' : 'right-4 md:right-20 lg:right-45 2xl:right-105'}`}>
                 <div className={`absolute -top-2 ${index % 2 === 0 ? '-left-5' : '-right-5'}`}>
                     <Quote size={36} className={`text-(--white)/30 ${index % 2 === 0 ? 'rotate-180' : 'rotate-360'}`}/>
                 </div>
@@ -113,11 +111,11 @@ const Reviews =({review, index})=>{
             </motion.div>
             <motion.div 
             style={{y: textFlyIn2}}
-            className={`absolute bottom-20 ${index % 2 === 0 ? 'right-10 2xl:right-60' : 'left-10 2xl:left-60'}`}>
-                <motion.h1 className={`text-[46px] lg:text-[132px] text-(--white) ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
+            className={`absolute bottom-20 ${index % 2 === 0 ? 'right-10 md:right-20 2xl:right-60' : 'left-10 md:left-20 2xl:left-60'}`}>
+                <motion.h1 className={`text-[46px]  md:text-[132px] text-(--white) ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
                 style={{fontFamily:'qaveria', scale:textScale}}>
-                    <span className='lg:block inline-block'>{review.location}</span> 
-                    <span className='lg:block inline-block'>Nepal</span> 
+                    <span className='md:block inline-block'>{review.location}</span> 
+                    <span className='md:block inline-block'>Nepal</span> 
                 </motion.h1>
             </motion.div>
         </motion.div>

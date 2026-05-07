@@ -12,9 +12,11 @@ export default function Index() {
         <div>
             <HeroSection/>
             <Destination/>
+
             <Expereince/>
             <Gallery/>
             <Testimonials/>
+            
             <Footer/> 
         </div>
     )
