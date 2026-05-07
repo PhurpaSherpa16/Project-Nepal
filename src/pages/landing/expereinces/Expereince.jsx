@@ -1,16 +1,27 @@
 import React, { useRef } from 'react'
 import { Heading } from '../../../components/heading'
-import { useScroll, motion, useSpring, useTransform } from 'framer-motion'
+import { useScroll, motion, useSpring, useTransform, useVelocity } from 'framer-motion'
 import Transition from '../../../components/transition'
 import Gallery from '../why/gallary'
 import { useBreakPoints } from '../../../hooks/breakpoint'
+import { CurveEffect } from '../../../components/curve_effect'
 
 
 export default function Expereince() {
     const {width, current} = useBreakPoints()
+    const containerRef = useRef(null)
+    
+    // Track the scroll of this section
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    })
+    const scrollVelocity = useVelocity(scrollYProgress)
 
   return (
-    <div id='experience' className='bg-(--white) relative z-10'>
+    <div ref={containerRef} id='experience' className='bg-(--white) relative z-10'>
+        {/* Top Curve Effect */}
+        <CurveEffect velocity={scrollVelocity} side="top" color="fill-(--white)" />
 
         <motion.div className='relative overflow-y-hidden space-y-20 py-20 md:py-0 md:space-y-0'>
             {/* content 1 */}

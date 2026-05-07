@@ -1,8 +1,9 @@
 import { MoveRight } from 'lucide-react'
 import React, { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useVelocity, useSpring } from 'framer-motion'
 import { Heading } from '../../../components/heading'
 import Transition from '../../../components/transition'
+import { CurveEffect } from '../../../components/curve_effect'
 
 export default function Destination() {
     const verticalRef = useRef(null)
@@ -19,6 +20,8 @@ export default function Destination() {
 
     const pushX = useTransform(pushOpenToX, [0, 0.1, 0.5], ['0', '0', '-110%'])
 
+    // Velocity-based curvature
+    const scrollVelocity = useVelocity(verticalScroll)
 
   return (
     <div ref={verticalRef} id='diversity' className='h-[1000vh] bg-(--black) relative'>
@@ -27,7 +30,7 @@ export default function Destination() {
             <OpeningContent pushX={pushX}/>
             <motion.div style={{x}} className='flex items-center shrink-0 relative'>
                 {content.map((item, index)=>(
-                    <Content key={index} {...item} index={index}/>
+                    <Content key={index} {...item} index={index} velocity={scrollVelocity}/>
                 ))}
             </motion.div>
         </div>
@@ -69,11 +72,17 @@ const OpeningContent = ({pushX}) =>{
     )
 }
 
-const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt, index, x})=>{
+const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt, index, velocity})=>{
     return(
         <div className={`bg-green-950 text-(--white) h-screen w-[130vw] shrink-0 
-        flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-16
+        flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-16 relative
         ${index > 0 ? 'pl-8 md:pl-32' : ''}`}>
+            
+            {/* Curvature SVG - Only for the first item */}
+            {index === 0 && (
+                <CurveEffect velocity={velocity} side="left" color="fill-green-950" />
+            )}
+
             <div className='w-full lg:w-2/6 padding_inline space-y-4'>
                 <Tag tag={tag}/>
                 <Heading text1={heading1} text2={heading2}text3={heading3} className='md:text-[56px] lg:text-[132px]'/>

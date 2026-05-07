@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import FAQ from '../faq/FAQ'
 import { footerData } from '../../../data/site'
 import { Globe, MoveUp } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, useScroll, useVelocity } from 'motion/react'
 import Logo from '../../../components/logo'
 import { Link } from 'react-router-dom'
 import { staggerVarients, footerVarients } from '../../../utils/motion'
+import { CurveEffect } from '../../../components/curve_effect'
 
 export default function Footer() {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+  const scrollVelocity = useVelocity(scrollYProgress)
+
   return (
-    <div className="h-[250vh] md:h-[170vh] lg:h-[200vh] w-screen relative">
+    <div ref={containerRef} className="h-[250vh] md:h-[170vh] lg:h-[200vh] w-screen relative">
       <div className='absolute inset-0 z-20 h-fit'>
         <FAQ />
+        <CurveEffect velocity={scrollVelocity} side="bottom" color="fill-(--green)" />
       </div>
       <div className='min-h-screen w-full bg-(--white) sticky top-0 overflow-hidden'>
         <FooterContent footerData={footerData} />

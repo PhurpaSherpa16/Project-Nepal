@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import Transition from '../../../components/transition'
 import { Content } from '../expereinces/Expereince'
-import { useScroll, useSpring, useTransform, motion } from 'motion/react'
+import { useScroll, useSpring, useTransform, motion, useVelocity } from 'motion/react'
 import useMouseHover from '../../../hooks/useMouseHover'
 import { useBreakPoints } from '../../../hooks/breakpoint'
+import { CurveEffect } from '../../../components/curve_effect'
 
 export default function Gallery() {
     const mainDivRef = useRef(null)
@@ -12,6 +13,8 @@ export default function Gallery() {
         target: mainDivRef,
         offset: ["start end", "end start"]
     })
+    
+    const scrollVelocity = useVelocity(scrollYProgress)
 
     const scale = useSpring(
         useTransform(scrollYProgress, [0, 1], [1, 0.9]),
@@ -37,7 +40,7 @@ export default function Gallery() {
 
         <div className='h-fit w-screen absolute inset-0 z-20 overflow-hidden'>
             {/* content 5 */}
-            <div className='h-screen w-full overflow-hidden'>
+            <div className='h-screen w-full relative'>
                 <Content 
                 title1='Human'
                 title2='Warmth'
@@ -56,6 +59,8 @@ export default function Gallery() {
                         </span>
                     </>
                 }/>
+                {/* Bottom Curve Effect for the white content section */}
+                <CurveEffect velocity={scrollVelocity} side="bottom" color="fill-(--white)" />
             </div>
 
             {current != 'sm' ? <div className='h-[80vh] -top-100'/> : <div className='h-[20vh] mt-40'/>}
