@@ -2,12 +2,13 @@ import React, { useRef } from 'react'
 import { Heading } from '../../../components/heading'
 import { Quote } from 'lucide-react'
 import { content, travelers, reviews } from '../../../data/site'
-import { useScroll, useSpring, useTransform, motion, useMotionValue } from 'motion/react'
+import { useScroll, useSpring, useTransform, motion } from 'motion/react'
 import useMouseHover from '../../../hooks/useMouseHover'
+import PhoneFrame from '../../../components/PhoneFrame'
 
 export default function Testimonials() {
   return (
-    <div className='relative z-20'>
+    <div className='relative w-screen z-20 overflow-hidden'>
         <div className="bg-(--white) h-screen pb-16 2xl:pb-32">
             <div className='padding_inline_block flex flex-col gap-16 lg:flex-row items-center justify-center lg:justify-end lg:items-end min-h-full relative'>
                 <div className='text-center space-y-4 relative z-10 w-fit h-full flex justify-center lg:justify-end lg:items-end flex-col'>
@@ -36,7 +37,7 @@ export default function Testimonials() {
                 </div>
             </div>
         </div>
-        <div id='testimonials' className='bg-(--black) min-h-screen lg:min-h-[320vh] pb-20 lg:pb-70 overflow-hidden'>
+        <div id='testimonials' className='bg-(--black) min-h-screen lg:min-h-[320vh] pt-20 md:pt-0 lg:pt-10 pb-20 lg:pb-70 overflow-hidden space-y-32'>
             {reviews.map((review, index) => (
                 <Reviews key={index} review={review} index={index}/>
             ))}
@@ -56,7 +57,7 @@ const Reviews =({review, index})=>{
     })
 
     const imageScale = useSpring(
-        useTransform(scrollYProgress, [0, 1], [1, 1.3]),
+        useTransform(scrollYProgress, [0, 1], [0.8, 1.3]),
         {stiffness: 100, damping: 20}
     )
 
@@ -79,25 +80,17 @@ const Reviews =({review, index})=>{
         <motion.div ref={mainDivRef} 
         onMouseMove={handleMouseEnter}
         className='h-screen bg-(--black) flex lg:flex-col items-center justify-center sticky'>
-            <motion.div className='w-120 md:w-full h-160 md:h-full lg:h-160 lg:w-120 flex items-center justify-center relative' 
+            <motion.div className='w-full flex items-center justify-center relative scale-100 md:scale-125 lg:scale-100' 
             style={{
                 y: ImageFlyIn,
                 scale:imageScale
             }}>
-                <motion.img
-                initial={{opacity:0}}
-                whileInView={{opacity:1}}
-                transition={{duration:0.3, delay:0.2, ease:"easeIn"}}
-                src={review.image} alt="pokhara" className='h-80 w-60 md:w-[40%] md:h-[40%] lg:w-full lg:h-full object-cover origin-top lg:absolute lg:-translate-x-[50%] lg:-translate-y-[50%]' 
-                style={{scale: imageScale, 
-                    top: top,
-                    left: left,
-                }}/>
+                <PhoneFrame videoSrc={review.video} avatar={review.avatar} name={review.name} quote={review.quote} country={review.country} location={review.location}/>
             </motion.div>
             <motion.div 
             style={{y:textFlyIn1}}
-            className={`space-y-4 absolute top-30 2xl:top-50 ${index % 2 === 0 ? 'left-4 md:left-20 lg:left-45 2xl:left-105' : 'right-4 md:right-20 lg:right-45 2xl:right-105'}`}>
-                <div className={`absolute -top-2 ${index % 2 === 0 ? '-left-5' : '-right-5'}`}>
+            className={`space-y-4 absolute  -top-20 md:top-30 2xl:top-50 bg-black/30 p-8 md:bg-transparent md:p-0 ${index % 2 === 0 ? '-left-4 md:left-20 lg:left-45 2xl:left-105' : '-right-4 md:right-20 lg:right-45 2xl:right-105'}`}>
+                <div className={`absolute lg:-top-2 ${index % 2 === 0 ? 'left-5 lg:-left-5' : 'right-5 lg:-right-5'}`}>
                     <Quote size={36} className={`text-(--white)/30 ${index % 2 === 0 ? 'rotate-180' : 'rotate-360'}`}/>
                 </div>
                 <p className={`w-sm text-(--white) text-lg ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>{review.quote}</p>

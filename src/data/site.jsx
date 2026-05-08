@@ -11,27 +11,36 @@ export const travelers = [
 export const reviews = [
     {
         image:"/pokhara.jpg",
-        quote:"Reflections from travelers who came seeking adventure, and left with something far more lasting",
-        name:"Emma Collins",
-        country:"London, United Kingdom",
-        location:"Pokhara",
-        avatar: "/avatar1.png"
-    },
-    {
-        image:"/swyambhu.jpg",
-        quote:"Reflections from travelers who came seeking adventure, and left with something far more lasting",
+        video:"/videos/nepal.mp4",
+        quote:"Kathmandu felt alive in every direction—temples hidden between narrow streets, incense in the air, and moments of calm inside the chaos. It’s a city that stays with you long after you leave.",
         name:"Emma Collins",
         country:"London, United Kingdom",
         location:"Kathmandu",
+        avatar: "/avatar1.png"
+    },
+    {
+        video:"/videos/ebc.mp4",
+        quote:"Nothing prepares you for the scale of the Himalayas. Every step toward Everest felt unreal—the silence, the altitude, the people, the mountains. It was the most meaningful journey I’ve ever taken.",
+        name:"Lucas Meyer",
+        country:"Berlin, Germany",
+        location:"EBC",
         avatar: "/avatar2.png"
     },
     {
-        image:"/exp2_EBC.jpg",
-        quote:"Reflections from travelers who came seeking adventure, and left with something far more lasting",
-        name:"Emma Collins",
-        country:"London, United Kingdom",
-        location:"EBC",
+        video:"/videos/gandruk.mp4",
+        quote:"Ghandruk felt deeply human. The mountain views were incredible, but what I remember most is the warmth of the people, shared meals, and waking up to quiet Himalayan mornings.",
+        name:"Sofia Bennett",
+        country:"New York, USA",
+        location:"Gandruk",
         avatar: "/avatar3.png"
+    },
+    {
+        video:"/videos/pokhara.mp4",
+        quote:"Pokhara gave me a kind of peace I didn’t know I needed. Watching the lake at sunrise with the mountains reflecting in the water felt almost dreamlike.",
+        name:"Yuko Kim",
+        country:"Seoul, South Korea",
+        location:"Pokhara",
+        avatar: "/avatar4.png"
     },
 
 ]
