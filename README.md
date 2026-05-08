@@ -76,7 +76,7 @@ npm run build
 
 ## Link to Website
 
-- https://project-nepal.netlify.app/
+- https://project-visit-nepal-phurpa.vercel.app/
 
 ---
 Crafted to inspire exploration. 🏔️
