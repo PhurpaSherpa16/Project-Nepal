@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import Logo from '../../../components/logo'
 import ButtonCTA from '../../../components/button_cta'
 import { staggerVarients, itemsVarients, scaleBackgroundVariant } from '../../../utils/motion'
+import { HeroSectionData } from '../../../data/site'
 
 export default function HeroSection() {
 
@@ -14,12 +15,12 @@ export default function HeroSection() {
             viewport={{ once: true }}
         >
             <motion.div className='absolute inset-0 z-0 overflow-hidden'>
-                <motion.img src="/hero_background.jpeg" alt="background"
+                <motion.img src={HeroSectionData.hero_background} alt="background"
                     variants={scaleBackgroundVariant}
                     initial='hidden'
                     whileInView='visible'
                     viewport={{ once: true }}
-                    className='size-full object-cover object-center ' />
+                    className='size-full object-cover object-center'/>
             </motion.div>
             <div className='padding relative z-10 h-full flex flex-col justify-between'>
                 <header className='flex justify-between'>

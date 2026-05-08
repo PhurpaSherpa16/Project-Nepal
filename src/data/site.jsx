@@ -8,6 +8,41 @@ export const travelers = [
     '/avatar3.png'
 ]
 
+export const HeroSectionData = {
+  hero_background : '/hero_background.jpeg',  
+}
+
+
+export const DestinationSectionData = [
+    {   tag: 'Ancient • Living • Timeless',
+        heading1: 'The',
+        heading2: 'Sacred',
+        heading3: 'Valley',
+        image: 'swyambhu.jpg',
+        image_alt: 'swyambhu image',
+        paragraph: "Where Ancient Temples and Monasteries stand side by side, and spirituality is not observed from afar—but lived in every moment.",  
+    },
+    {
+        tag: 'Calm • Open • Reflective',
+        heading1: 'Lake',
+        heading2: 'And',
+        heading3: 'Stillness',
+        image: 'resized_pokhara.jpg',
+        image_alt: 'pokhara image',
+        paragraph: "A place where the mountains meet their reflection, and the world feels suspended between movement and calm.",  
+    },
+    {
+        tag: 'Untamed • Quiet • Unpredictable',
+        heading1: 'Wild',
+        heading2: 'Lowland',
+        heading3: 'Life',
+        image: 'chitwan.jpg',
+        image_alt: 'chitwan image',
+        paragraph: "Where dense grasslands conceal life at every turn, and the wild moves freely—unseen, untamed, and always present.",  
+    },
+  ]
+
+
 export const reviews = [
     {
         image:"/pokhara.jpg",

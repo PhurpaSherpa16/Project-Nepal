@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useVelocity, useSpring } from 'framer-
 import { Heading } from '../../../components/heading'
 import Transition from '../../../components/transition'
 import { CurveEffect } from '../../../components/curve_effect'
+import { DestinationSectionData } from '../../../data/site'
 
 export default function Destination() {
     const verticalRef = useRef(null)
@@ -29,7 +30,7 @@ export default function Destination() {
             <Transition title1={'More'} title2={'Than'} title3={'Destinations'} hightlight='title3' className={'fixed inset-0'} />
             <OpeningContent pushX={pushX}/>
             <motion.div style={{x}} className='flex items-center shrink-0 relative'>
-                {content.map((item, index)=>(
+                {DestinationSectionData.map((item, index)=>(
                     <Content key={index} {...item} index={index} velocity={scrollVelocity}/>
                 ))}
             </motion.div>
@@ -60,7 +61,7 @@ const OpeningContent = ({pushX}) =>{
             </div>
 
             {/*image*/}
-            <div className='h-120 md:h-180 lg:h-140 2xl:180 w-70 md:w-150 lg:w-140 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2 opacity-50 lg:opacity-100'>
+            <div className='h-140 md:h-180 lg:h-180 2xl:h-220 w-70 md:w-150 lg:w-140 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2 opacity-50 lg:opacity-100'>
                 <img src="/swyambhu.jpg" alt="swyambhu image" className='h-full w-full object-cover
                 filter grayscale-100'/>
             </div>
@@ -115,33 +116,3 @@ const Paragraph = ({children})=>{
     )
 }
 
-const content = [
-    {
-        tag: 'Ancient • Living • Timeless',
-        heading1: 'The',
-        heading2: 'Sacred',
-        heading3: 'Valley',
-        image: '/swyambhu.jpg',
-        image_alt: 'swyambhu image',
-        paragraph: "Where Ancient Temples and Monasteries stand side by side, and spirituality is not observed from afar—but lived in every moment.",  
-    },
-    {
-        tag: 'Calm • Open • Reflective',
-        heading1: 'Lake',
-        heading2: 'And',
-        heading3: 'Stillness',
-        image: '/pokhara.jpg',
-        image_alt: 'pokhara image',
-        paragraph: "A place where the mountains meet their reflection, and the world feels suspended between movement and calm.",  
-    },
-    {
-        tag: 'Untamed • Quiet • Unpredictable',
-        heading1: 'Wild',
-        heading2: 'Lowland',
-        heading3: 'Life',
-        image: '/chitwan.jpg',
-        image_alt: 'chitwan image',
-        paragraph: "Where dense grasslands conceal life at every turn, and the wild moves freely—unseen, untamed, and always present.",  
-    },
-
-]
