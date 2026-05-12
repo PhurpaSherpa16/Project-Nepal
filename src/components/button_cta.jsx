@@ -6,7 +6,7 @@ import { motion, scale } from 'motion/react'
 export default function ButtonCTA() {
   return (
     <motion.a
-    href="#diversity"
+    href="#destinations"
     whileHover={{scale: 1.05}}
     whileTap={{scale:0.95}}
     className='group relative px-2 pl-6 py-1.5 
