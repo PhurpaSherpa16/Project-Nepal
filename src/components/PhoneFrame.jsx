@@ -1,10 +1,8 @@
-import React from 'react';
 import { BatteryCharging, Wifi, Signal, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
-import { motion } from 'motion/react';
 
 const PhoneFrame = ({ videoSrc, avatar, name, quote, country, location }) => {
   return (
-    <div className='relative w-72 md:w-80 h-[500px] md:h-[650px] mx-auto'>
+    <div className='relative w-72 md:w-80 h-[600px] md:h-[650px] mx-auto'>
       {/* Phone Case/Border */}
       <div className='absolute inset-0 bg-(--black)/30 rounded-[3rem] border-4 border-(--white) shadow-2xl overflow-hidden ring-1 ring-white/10'>
         {/* Status Bar */}
