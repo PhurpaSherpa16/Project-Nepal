@@ -29,7 +29,7 @@ export default function Destination() {
         <div className='sticky top-0 min-h-screen w-full flex items-center overflow-x-hidden'>
             <Transition title1={'More'} title2={'Than'} title3={'Destinations'} hightlight='title3' className={'fixed inset-0'} />
             <OpeningContent pushX={pushX}/>
-            <motion.div style={{x}} className='flex items-center shrink-0 relative'>
+            <motion.div style={{x}} className='flex items-center shrink-0 relative gap-16 bg-(--dark_green)'>
                 {DestinationSectionData.map((item, index)=>(
                     <Content key={index} {...item} index={index} velocity={scrollVelocity}/>
                 ))}
@@ -61,9 +61,9 @@ const OpeningContent = ({pushX}) =>{
             </div>
 
             {/*image*/}
-            <div className='h-140 md:h-180 lg:h-180 2xl:h-220 w-70 md:w-150 lg:w-140 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2 opacity-50 lg:opacity-100'>
-                <img src="/swyambhu.jpg" alt="swyambhu image" className='h-full w-full object-cover
-                filter grayscale-100'/>
+            <div className='h-140 md:h-180 lg:h-180 2xl:h-220 w-70 md:w-150 group lg:w-140 2xl:w-140 overflow-hidden absolute left-1/2 -translate-x-1/2 opacity-50 lg:opacity-100'>
+                <motion.img src="/bhaktapur.webp" alt="bhaktapur image" className='h-full w-full object-cover
+                filter grayscale-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out'/>
             </div>
 
             <div className='relative z-10 h-fit md:h-160 lg:h-140 flex items-end lg:-bottom-7'>
@@ -75,13 +75,13 @@ const OpeningContent = ({pushX}) =>{
 
 const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt, index, velocity})=>{
     return(
-        <div className={`bg-green-950 text-(--white) h-screen w-[130vw] shrink-0 
+        <div className={`bg-(--dark_green) text-(--white) h-screen w-[130vw] shrink-0 
         flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-16 relative
         ${index > 0 ? 'pl-8 md:pl-32' : ''}`}>
             
             {/* Curvature SVG - Only for the first item */}
             {index === 0 && (
-                <CurveEffect velocity={velocity} side="left" color="fill-green-950" />
+                <CurveEffect velocity={velocity} side="left" color="fill-(--dark_green)" />
             )}
 
             <div className='w-full lg:w-2/6 padding_inline space-y-4'>
@@ -93,7 +93,11 @@ const Content = ({heading1, heading2, heading3, paragraph, tag, image, image_alt
             </div>
             <div className='lg:w-4/6 w-full'>
                 <motion.img
-                src={image} alt={image_alt} className='h-120 md:h-180 lg:h-screen w-full object-cover object-center'/>
+                src={image} alt={image_alt} className='h-120 md:h-180 lg:h-screen w-full object-cover object-center
+                filter grayscale-100'
+                whileHover={{filter: "grayscale(0%)"}}
+                transition={{duration: 0.5}}
+                />
             </div>
         </div>
     )

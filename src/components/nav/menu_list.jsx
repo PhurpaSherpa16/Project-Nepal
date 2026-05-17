@@ -19,6 +19,7 @@ const socials = [
 ]
 
 export default function MenuList({ setIsOpen }) {
+    const transition={type:"spring"}
   return (
    <div className='h-screen w-screen bg-(--black)/60 fixed inset-0'>
      <motion.div 
@@ -33,19 +34,39 @@ export default function MenuList({ setIsOpen }) {
                     <div className='mb-12 border-b border-(--white)/10 pb-4'>
                         <p className='text-xs text-(--black)/40 uppercase tracking-[0.3em] font-medium'>Quick Access</p>
                     </div>
-                    <motion.div variants={staggerChildren} className='flex flex-col gap-8'>
+                    <motion.div variants={staggerChildren} className='flex flex-col gap-8 relative'>
                         {menuList.map((item, index) => (
                             <motion.div 
                                 variants={slide} 
                                 key={index} 
                                 className='group'
                                 onClick={() => setIsOpen(false)}>
-                                <a href={item.link} className='block overflow-hidden'>
-                                    <motion.p className='text-(--black) text-4xl md:text-5xl uppercase font-bold 
-                                    tracking-tighter hover:text-(--green) transition-colors duration-300'>
-                                        {item.title}
+                                <motion.a href={item.link} className='relative'
+                                initial='initial'
+                                whileHover="whileHover">
+                                    <motion.p className='text-(--black) group-hover:text-(--green) text-4xl md:text-5xl uppercase font-bold 
+                                    tracking-tighter transition-colors duration-300'
+                                    variants={{
+                                        initial: {x: 0},
+                                        whileHover: {x: -20,}
+                                    }}
+                                    transition={{
+                                        type:'spring',
+                                        delayChildren:0.2,
+                                        staggerChildren:0.075
+                                    }}>
+                                        {[...item.title].map((letter,index)=>(
+                                            <motion.span key={index} variants={{
+                                                initial: {x: 0},
+                                                whileHover: {x: 20}
+                                            }}
+                                            transition={transition}
+                                            className='inline-block'>
+                                                {letter === " " ? "\u00A0" : letter}
+                                            </motion.span>
+                                        ))}
                                     </motion.p>
-                                </a>
+                                </motion.a>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -58,9 +79,31 @@ export default function MenuList({ setIsOpen }) {
                     <motion.div variants={staggerChildren} className='flex gap-6'>
                         {socials.map((item, index) => (
                             <motion.div variants={slide} key={index}>
-                                <a href={item.link} className='text-(--black)/60 hover:text-(--black) text-sm transition-colors'>
-                                    {item.name}
-                                </a>
+                                <motion.a href={item.link} className='text-(--black)/60 hover:text-(--black) text-sm transition-colors group relative'
+                                initial='initial'
+                                whileHover="whileHover">
+                                    <motion.p className='text-(--black) group-hover:text-(--green)'
+                                    variants={{
+                                        initial: {x: 0},
+                                        whileHover: {x: -8,}
+                                    }}
+                                    transition={{
+                                        type:'spring',
+                                        delayChildren:0.2,
+                                        staggerChildren:0.075
+                                    }}>
+                                        {[...item.name].map((letter,index)=>(
+                                            <motion.span key={index} variants={{
+                                                initial: {x: 0},
+                                                whileHover: {x: 8}
+                                            }}
+                                            transition={transition}
+                                            className='inline-block'>
+                                                {letter === " " ? "\u00A0" : letter}
+                                            </motion.span>
+                                        ))}
+                                    </motion.p>
+                                </motion.a>
                             </motion.div>
                         ))}
                     </motion.div>

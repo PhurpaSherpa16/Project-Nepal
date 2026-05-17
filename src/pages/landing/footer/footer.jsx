@@ -117,7 +117,7 @@ const FooterContent = ({ footerData }) => {
           </div>
         </div>
         <motion.h1
-          className='text-[50px] md:text-[120px] lg:text-[170px] 2xl:text-[240px] origin-top 
+          className='text-[45px] md:text-[120px] lg:text-[170px] 2xl:text-[240px] origin-top 
                 text-(--green) uppercase text-center tracking-[.15em]
                 font-black'>
           {hero.split('').map((letter, index) => (
