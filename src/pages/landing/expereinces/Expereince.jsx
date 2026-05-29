@@ -122,7 +122,7 @@ export const Content =({className, paragraph, text_align='text-right', justify_a
     const {width, current} = useBreakPoints()
 
     return(
-        <>
+        <div>
             {current === 'sm' ? 
                 <SmallScreenContent
                     className={className}
@@ -173,7 +173,7 @@ export const Content =({className, paragraph, text_align='text-right', justify_a
                     title2={title2}
                     title3={title3}/>
             }
-        </>
+        </div>
     )
 }
 

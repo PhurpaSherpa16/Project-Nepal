@@ -22,7 +22,7 @@ export default function HeroSection() {
                     viewport={{ once: true }}
                     className='size-full object-cover object-center'/>
             </motion.div>
-            <div className='padding relative z-10 h-full flex flex-col justify-between'>
+            <div className='padding relative z-10 h-full flex flex-col justify-between pb-20'>
                 <header className='flex justify-between'>
                     <motion.div variants={itemsVarients} custom={{ direction: -1, distance: 100, transitionDelay: 0.5 }} >
                         <Logo />
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                 </div>
                             </div>
                         </div>
-                        <motion.div className='pt-2 w-full flex justify-center'
+                        {/* <motion.div className='pt-2 w-full flex justify-center'
                             initial={{ y: 40, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: true }}
@@ -82,7 +82,7 @@ export default function HeroSection() {
                                 <Mouse className='size-6 text-(--white)' />
                                 <motion.p className='text-(--white) text-xs uppercase tracking-widest'>scroll down</motion.p>
                             </motion.div>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                 </div>
             </div>

@@ -17,6 +17,16 @@
   src: url('/qaveria.ttf') format('truetype');
 }
 
+.mainDiv{
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.snap_div{
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
 
 @layer utilities{
   button{
@@ -77,23 +87,26 @@
   position: absolute;
   left: 20%;
   transition: transform 0.3s ease, top 0.3s ease;
-  background-color: var(--white);
 }
 
 .burger::after {
   top: -5px;
+  background-color: var(--white);
 }
 
 .burger::before {
   top: 5px;
+  background-color: var(--white);
 }
 
 .burger_active::after {
   transform: rotate(45deg);
   top: 0;
+  background-color: var(--green);
 }
 
 .burger_active::before {
   transform: rotate(-45deg);
   top: 0;
+  background-color: var(--green);
 }
