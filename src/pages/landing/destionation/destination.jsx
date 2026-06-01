@@ -5,6 +5,7 @@ import { Heading } from '../../../components/heading'
 import Transition from '../../../components/transition'
 import { CurveEffect } from '../../../components/curve_effect'
 import { DestinationSectionData } from '../../../data/site'
+import { Link } from 'react-router-dom'
 
 export default function Destination() {
     const verticalRef = useRef(null)
@@ -56,7 +57,7 @@ const OpeningContent = ({pushX}) =>{
                 </p>
 
                 <div className='mt-4 items-center gap-1 text-(--white) hidden md:flex'>
-                    <span className='tracking-wider'>Explore More</span> <MoveRight className='size-4'/>
+                    <a href={'#experience'} className='tracking-wider flex items-center gap-2'>Explore More <MoveRight className='size-4'/></a>
                 </div>
             </div>
 

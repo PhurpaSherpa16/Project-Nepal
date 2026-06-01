@@ -117,20 +117,19 @@ export const footerData = {
     hero : 'Visit Nepal',
     supporting: 'Where towering landscapes, timeless traditions, and unforgettable journeys come together.',
     quicklink : [
-        {label:'Destinations', link: '#'},
-        {label:'Experiences', link: '#',},
-        {label:'Why Nepal', link: '#',},
-        {label:'Travel Guide', link: '#',},
-        {label:'Stories', link: '#',},
-        {label:'FAQ', link: '#',},
+        {label:'Destinations', link: '#destinations'},
+        {label:'Experiences', link: '#expereince',},
+        {label:'Why Nepal', link: '#why',},
+        {label:'Stories', link: '#testimonials',},
+        {label:'FAQ', link: '#faq',},
     ],
     trendyplaces :[
-        {label:'Kathmandu Valley', link: '#'},
-        {label:'Pokhara', link: '#'},
-        {label:'Himalayas', link: '#'},
-        {label:'Chitwan', link: '#'},
-        {label:'Mustang', link: '#'},
-        {label:'More', link: '#'},
+        {label:'Kathmandu Valley', link: '/explore#culture&faith'},
+        {label:'Pokhara', link: '/explore#trek&trail'},
+        {label:'Himalayas', link: '/explore#horizon'},
+        {label:'Chitwan', link: '/explore#people'},
+        {label:'Mustang', link: '/explore#horizon'},
+        {label:'More', link: '/explore#flavour'},
     ],
     socials:[
         {label: 'Github', link: '#', icon:'/social_github.png'},
@@ -141,3 +140,61 @@ export const footerData = {
     copy:'© 2025 Visit Nepal. Crafted to inspire exploration.',
     privacy:'Privacy Policy || Cookie preferences || Website by Phurpa Sherpa'
 }
+
+
+export const gallaryImages = [
+  // Culture & Faith
+  {id: 'c1', label:'Pashupatinath Aarati Ceremony', tag:'culture&faith', src:'/gallary/culture_10.mp4', type:'video'},
+  {id: 'c2', label:'Jatra Blessing from God', tag:'culture&faith', src:'/gallary/culture_01.webp', type:'image'},
+  {id: 'c3', label:'Kathmandu Durbar Square', tag:'culture&faith', src:'/gallary/culture_02.webp', type:'image'},
+  {id: 'c4', label:'Boudhanath Stupa Prayer Flags', tag:'culture&faith', src:'/gallary/culture_03.webp', type:'image'},
+  {id: 'c5', label:'Pashupatinath Sacred Temple', tag:'culture&faith', src:'/gallary/culture_04.webp', type:'image'},
+  {id: 'c6', label:'Patan Daurbar Square', tag:'culture&faith', src:'/gallary/culture_05.webp', type:'image'},
+  {id: 'c7', label:'Goddess Sita Birthplace - Janaki Temple', tag:'culture&faith', src:'/gallary/culture_06.jpg', type:'image'},
+  {id: 'c8', label:'Devotees at Pashupatinath Temple', tag:'culture&faith', src:'/gallary/culture_11.mp4', type:'video'},
+  {id: 'c9', label:'World Peace Pagoda, Pokhara', tag:'culture&faith', src:'/gallary/culture_07.webp', type:'image'},
+
+  // Horizon & Mountains
+  {id: 'h1', label:'Flight Over the Himalayas', tag:'horizon', src:'/gallary/horizon_10.mp4', type:'video'},
+  {id: 'h2', label:'Upper Manang', tag:'horizon', src:'/gallary/horizon_01.jpg', type:'image'},
+  {id: 'h3', label:'Fishtail Mountain from Pokhara ', tag:'horizon', src:'/gallary/horizon_02.jpg', type:'image'},
+  {id: 'h4', label:'Everest Base Camp View', tag:'horizon', src:'/gallary/horizon_03.jpg', type:'image'},
+  {id: 'h8', label:'Hidden Treasure, Dolpa Valley', tag:'horizon', src:'/gallary/horizon_08.jpg', type:'image'},
+  {id: 'h5', label:'Tea Garden, Kanyam', tag:'horizon', src:'/gallary/horizon_04.jpeg', type:'image'},
+  {id: 'h6', label:'Blue Water, Phoksundo Lake', tag:'horizon', src:'/gallary/horizon_05.webp', type:'image'},
+  {id: 'h7', label:'Snowy Himalayan Peaks', tag:'horizon', src:'/gallary/horizon_06.jpg', type:'image'},
+  {id: 'h8', label:'Himalayan Clouds Roll In', tag:'horizon', src:'/gallary/horizon_11.mp4', type:'video'},
+  
+  // Trek & Trail
+  {id: 't1', label:'Adventure off-roading life time experience', tag:'trek&trail', src:'/gallary/trek_01.mp4', type:'video'},
+  {id: 't2', label:'Rider Overlooking the Valley', tag:'trek&trail', src:'/gallary/trek_02.webp', type:'image'},
+  {id: 't3', label:'Hiker in the Misty Mountain', tag:'trek&trail', src:'/gallary/trek_03.jpg', type:'image'},
+  {id: 't4', label:'Suspension Bridge Crossing', tag:'trek&trail', src:'/gallary/trek_04.jpg', type:'image'},
+  {id: 't5', label:'Trail Through Rhododendron Forests', tag:'trek&trail', src:'/gallary/trek_05.webp', type:'image'},
+  {id: 't6', label:'Morning Fog on the Trail', tag:'trek&trail', src:'/gallary/trek_07.webp', type:'image'},
+  {id: 't7', label:'Cycling in Upper Mustang', tag:'trek&trail', src:'/gallary/trek_08.jpg', type:'image'},
+  {id: 't8', label:'View from Top of World', tag:'trek&trail', src:'/gallary/trek_06.mp4', type:'video'},
+  {id: 't9', label:'Solo Traveler in Mountain', tag:'trek&trail', src:'/gallary/horizon_07.jpg', type:'image'},
+
+  // Flavour & Food
+  {id: 'f1', label:'Toursit Enjoying Food in Restaurant', tag:'flavour', src:'/gallary/food_09.mp4', type:'video'},
+  {id: 'f5', label:'Steaming Hot Nepali Foods', tag:'flavour', src:'/gallary/food_02.mp4', type:'video'},
+  {id: 'f2', label:'Traditional Nepali Thakali Food', tag:'flavour', src:'/gallary/food_01.webp', type:'image'},
+  {id: 'f4', label:'Thakali Thali Set', tag:'flavour', src:'/gallary/food_03.jpg', type:'image'},
+  {id: 'f6', label:'Street Food in Kathmandu', tag:'flavour', src:'/gallary/food_05.jpg', type:'image'},
+  {id: 'f3', label:'Nepali Foods Delicacies', tag:'flavour', src:'/gallary/food_08.mp4', type:'video'},
+  {id: 'f8', label:'Newari Platter', tag:'flavour', src:'/gallary/food_04.mp4', type:'video'},
+  {id: 'f7', label:'Nepali Fast Foods', tag:'flavour', src:'/gallary/food_06.webp', type:'image'},
+  {id: 'f9', label:'Momo', tag:'flavour', src:'/gallary/food_07.mp4', type:'video'},
+
+  // People & Stories
+  {id: 'p1', label:'Festival of Color Holi, Pokhara', tag:'people', src:'/gallary/people_03.mp4', type:'video'},
+  {id: 'p2', label:'Simling Faces, Strong Traditions', tag:'people', src:'/gallary/people_01.webp', type:'image'},
+  {id: 'p3', label:'Student With Smile', tag:'people', src:'/gallary/people_02.jpg', type:'image'},
+  {id: 'p4', label:'Dog Tihar, Festival of Dogs', tag:'people', src:'/gallary/people_04.png', type:'image'},
+  {id: 'p5', label:'Local Guide Sharing Stories', tag:'people', src:'/gallary/people_07.jpg', type:'image'},
+  {id: 'p6', label:'Warm Welcome', tag:'people', src:'/gallary/people_05.jpeg', type:'image'},
+  {id: 'p7', label:'Newari Kids in Traditional Dress', tag:'people', src:'/gallary/people_06.jpg', type:'image'},
+  {id: 'p8', label:'Artisan Crafting Mask', tag:'people', src:'/gallary/people_08.jpg', type:'image'},
+]
+    

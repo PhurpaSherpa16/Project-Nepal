@@ -35,8 +35,7 @@ export const CurveEffect = ({ velocity, side = 'left', color = 'fill-current', c
         <svg 
             className={`${svgClass} ${color} pointer-events-none ${className}`}
             viewBox={isVerticalSide ? "0 0 100 1000" : "0 0 1000 100"}
-            preserveAspectRatio="none"
-        >
+            preserveAspectRatio="none">
             <motion.path d={path} />
         </svg>
     )

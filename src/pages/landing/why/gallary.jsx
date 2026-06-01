@@ -28,7 +28,7 @@ export default function Gallery() {
     const {current} = useBreakPoints()
 
   return (
-    <div ref={mainDivRef} className='relative h-[500vh] md:h-[400vh] lg:h-[680vh] w-full bg-(--black)'> 
+    <div ref={mainDivRef} id='why' className='relative h-[500vh] md:h-[400vh] lg:h-[680vh] w-full bg-(--black)'> 
         <div className={`h-screen w-full flex items-center justify-center shrink-0 sticky top-0`}>
             <motion.h1 className='text-(--white) text-center text-[46px] md:text-[142px] lg:text-[132px]'
             style={{fontFamily:'qaveria', scale, opacity}}>
@@ -45,10 +45,8 @@ export default function Gallery() {
                 title1='Human'
                 title2='Warmth'
                 title3='Within'
-                tag='05/05'
-                image_1 = "left-30"
-                image_2 = {current === 'md' ? "-left-20" : "left-5"}
-                image_3 = {current === 'md' ? "-left-25" : "-left-25"}
+                number='05/05'
+                tag='people'
                 image1="/exp5_pic1.png"
                 image2="/exp5_pic2.jpg"
                 image3="/exp5_pic3.jpg"
@@ -60,7 +58,7 @@ export default function Gallery() {
                     </>
                 }/>
                 {/* Bottom Curve Effect for the white content section */}
-                <CurveEffect velocity={scrollVelocity} side="bottom" color="fill-(--white)" />
+                <CurveEffect velocity={scrollVelocity} side="bottom" color="fill-(--white)"/>
             </div>
 
             {current != 'sm' ? <div className='h-[80vh] -top-100'/> : <div className='h-[20vh] mt-40'/>}

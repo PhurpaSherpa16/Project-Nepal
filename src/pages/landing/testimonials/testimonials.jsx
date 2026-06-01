@@ -8,7 +8,7 @@ import PhoneFrame from '../../../components/PhoneFrame'
 
 export default function Testimonials() {
   return (
-    <div className='relative w-screen z-20 overflow-hidden'>
+    <div id='testimonials' className='relative w-screen z-20 overflow-hidden'>
         <div className="bg-(--white) h-screen pb-16 2xl:pb-32">
             <div className='padding_inline_block flex flex-col gap-16 lg:flex-row items-center justify-center lg:justify-end lg:items-end min-h-full relative'>
                 <div className='text-center space-y-4 relative z-10 w-fit h-full flex justify-center lg:justify-end lg:items-end flex-col'>

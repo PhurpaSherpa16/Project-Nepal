@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 
-export default function AnimatedCurv() {
+export default function AnimatedCurv({bg_color}) {
 
   // curved while open
   const initialPath = `M100 0 L100 ${window.innerHeight} Q-50 ${window.innerHeight / 2} 100 0`
@@ -18,7 +18,7 @@ export default function AnimatedCurv() {
   }
 
   return (
-    <svg className="h-full w-[100px] absolute top-0 -left-[99px] fill-(--white)">
+    <svg className={`h-full w-[100px] absolute top-0 -left-[99px] ${bg_color}`}>
       <motion.path {...pathAnimation}></motion.path>
     </svg>
   )

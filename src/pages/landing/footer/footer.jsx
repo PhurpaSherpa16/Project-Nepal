@@ -75,9 +75,9 @@ const FooterContent = ({ footerData }) => {
                 quicklink.map((link, index) => (
                   <motion.div key={index} className='flex justify-between'
                     variants={footerVarients}>
-                    <Link to={link.link} className='text-base hover:text-(--green) transition-colors duration-300 cursor-pointer hover:underline'>
+                    <a href={link.link} className='text-base hover:text-(--green) transition-colors duration-300 cursor-pointer hover:underline'>
                       {link.label}
-                    </Link>
+                    </a>
                   </motion.div>
                 ))
               }

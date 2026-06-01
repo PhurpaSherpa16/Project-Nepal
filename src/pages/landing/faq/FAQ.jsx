@@ -95,7 +95,7 @@ export default function FAQ() {
   }
 
   return (
-    <div className='min-h-screen bg-(--green) '>
+    <div id='faq' className='min-h-screen bg-(--green) '>
         <div className='lg:px-16 lg:py-16 py-8 flex flex-col-reverse lg:flex-row  min-h-screen lg:h-screen w-full'>
             <div ref={containerRef} className='h-fit lg:min-h-screen flex flex-col justify-center lg:w-2/3 w-full relative'>
                 {/* Sliding background cursor — bouncy rubbery spring */}
