@@ -25,7 +25,7 @@ export default function Expereince() {
         {/* Top Curve Effect */}
         <CurveEffect velocity={scrollVelocity} side="top" color="fill-(--white)" />
 
-        <motion.div className='relative overflow-y-hidden space-y-20 py-20 md:py-0 md:space-y-0'>
+        <motion.div className='relative overflow-y-scroll space-y-20 py-20 md:py-0 md:space-y-0'>
             {/* content 1 */}
             <Content
             number='01/05'
@@ -113,7 +113,7 @@ export const Content =({className, paragraph, image1, image2, image3, number, ti
     const {width, current} = useBreakPoints()
 
     return(
-        <div>
+        <div className='w-screen overflow-hidden'>
             {current === 'sm' ? 
                 <SmallScreenContent
                     className={className}
@@ -200,7 +200,7 @@ const LargeScreenContent = ({ className, paragraph, image1, image2, image3, numb
                     className='h-full w-full object-cover object-center relative'/>
                 </div>
                 <motion.div className={`size-30 md:size-60 2xl:size-72 absolute border-3 border-(--white)
-                top-40 ${left ? '-left-5' : 'right-5'} overflow-hidden`}
+                top-40 lg:top-20 min-[1400px]:top-40! ${left ? '-left-5' : 'right-5'} overflow-hidden`}
                 style={{y: imageFly2}}>
                     <motion.img src={image2} alt="image 2"
                     style={{scale: imageFlyScale1}}
@@ -208,7 +208,7 @@ const LargeScreenContent = ({ className, paragraph, image1, image2, image3, numb
                 </motion.div>
                 
                 <motion.div className={`w-60 h-40 md:h-60 lg:w-100 2xl:h-72 2xl:w-120 overflow-hidden absolute border-3 border-(--white) 
-                bottom-0 ${left ? '-left-25' : '-right-25'} overflow-hidden`}
+                bottom-0 lg:-bottom-30 min-[1400px]:-bottom-0! ${left ? '-left-25' : '-right-25'} overflow-hidden`}
                     style={{y: imageFly3}}>
                     <motion.img src={image3} alt="image 3"
                     style={{scale: imageFlyScale1}}

@@ -29,13 +29,13 @@ export default function MenuList({ setIsOpen }) {
         animate="show" 
         exit="exit" 
         className='fixed h-screen w-full md:w-[500px] top-0 right-0 bg-(--white) z-60 shadow-2xl'>
-        <div className='p-12 md:py-24 md:px-16 flex flex-col justify-between h-full'>
+        <div className='p-12 md:py-24 lg:py-16 min-[1400px]:py-24! md:px-16 flex flex-col justify-between h-full'>
             <div className='flex flex-col justify-between h-full'>
                 <div>
-                    <div className='mb-12 border-b border-(--white)/10 pb-4'>
+                    <div className='mb-12 lg:mb-6 min-[1400px]:mb-12! border-b border-(--white)/10 pb-4'>
                         <p className='text-xs text-(--black)/40 uppercase tracking-[0.3em] font-medium'>Quick Access</p>
                     </div>
-                    <motion.div variants={staggerChildren} className='flex flex-col gap-8 relative'>
+                    <motion.div variants={staggerChildren} className='flex flex-col gap-8 lg:gap-4 min-[1400px]:gap-8! relative'>
                         {menuList.map((item, index) => (
                             <motion.div 
                                 variants={slide} 
@@ -45,7 +45,7 @@ export default function MenuList({ setIsOpen }) {
                                 <motion.a href={item.link} className='relative'
                                 initial='initial'
                                 whileHover="whileHover">
-                                    <motion.p className='text-(--black) group-hover:text-(--green) text-4xl md:text-5xl uppercase font-bold 
+                                    <motion.p className='text-(--black) group-hover:text-(--green) text-4xl md:text-5xl xl:text-4xl! min-[1400px]:text-5xl!  uppercase font-bold 
                                     tracking-tighter transition-colors duration-300'
                                     variants={{
                                         initial: {x: 0},

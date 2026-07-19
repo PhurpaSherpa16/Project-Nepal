@@ -37,7 +37,7 @@ const FooterContent = ({ footerData }) => {
       variants={staggerVarients}
       initial='hidden'
       whileInView='visible'
-      className='padding_inline_block space-y-8 md:space-y-12 lg:space-y-16 h-full flex flex-col justify-between'>
+      className='padding_inline_block space-y-8 md:space-y-12 lg:space-y-8 min-[1400px]:space-y-16! h-full flex flex-col justify-between'>
       <motion.div
         className='flex justify-between items-end pt-32 md:pt-110 lg:pt-12 2xl:pt-32'>
         <motion.div variants={footerVarients} custom={{ direction: -1 }}>
@@ -101,7 +101,7 @@ const FooterContent = ({ footerData }) => {
           </motion.div>
         </div>
       </motion.div>
-      <div className='border-t border-black/20 pt-4 md:pt-8 lg:pt-16 flex flex-col-reverse md:flex-col'>
+      <div className='border-t border-black/20 pt-4 md:pt-8 lg:pt-8 min-[1400px]:pt-16! flex flex-col-reverse md:flex-col'>
         <div className='flex flex-col md:flex-row justify-between pt-4 gap-2'>
           <motion.p
             variants={footerVarients} custom={{ direction: -1 }}
@@ -117,7 +117,7 @@ const FooterContent = ({ footerData }) => {
           </div>
         </div>
         <motion.h1
-          className='text-[45px] md:text-[120px] lg:text-[170px] 2xl:text-[240px] origin-top 
+          className='text-[45px] md:text-[120px] lg:text-[160px] min-[1400px]:text-[170px]! 2xl:text-[240px] origin-top 
                 text-(--green) uppercase text-center tracking-[.15em]
                 font-black'>
           {hero.split('').map((letter, index) => (
