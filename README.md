@@ -20,6 +20,7 @@ Visit Nepal is a premium, high-performance travel and tourism web application de
 - **Scrolling**: [Lenis](https://lenis.darkroom.engineering/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Routing**: [React Router 7](https://reactrouter.com/)
+- **UI/UX Designing**: [Figma](https://www.figma.com/)
 
 ## 📁 Project Structure
 
@@ -35,38 +36,6 @@ src/
 └── index.css            # Global styles and Tailwind configuration
 ```
 
-## 🏁 Getting Started
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd "Project Nepal"
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-The application will be available at `http://localhost:5173` (or the next available port).
-
-### Production
-
-Build the project for production:
-```bash
-npm run build
-```
 
 ## 📝 Key Components
 
